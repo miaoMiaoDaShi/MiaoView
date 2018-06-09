@@ -1,0 +1,9 @@
+<resources>
+    <string name="public_app_name">喵喵看</string>
+    <string name="public_module_name">app</string>
+    <string name="public_loading">加载中</string>
+    <string name="public_name_recommend">推荐模块</string>
+    <string name="public_name_new_hold">抢先看</string>
+    <string name="public_name_mine">我的</string>
+    <string name="public_name_search">搜索</string>
+</resources>

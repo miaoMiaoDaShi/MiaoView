@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/public_white"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/mBtnRecommend"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/public_background"
+            android:textColor="@color/public_color_959292"
+            android:textSize="@dimen/public_font_24sp"
+            tools:text="@string/public_name_recommend" />
+
+        <Button
+            android:id="@+id/mBtnHold"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/public_background"
+            android:textColor="@color/public_color_959292"
+            android:textSize="@dimen/public_font_24sp"
+            tools:text="@string/public_name_new_hold" />
+
+        <Button
+            android:id="@+id/mBtnMine"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/public_background"
+            android:textColor="@color/public_color_959292"
+            android:textSize="@dimen/public_font_24sp"
+            tools:text="@string/public_name_mine" />
+    </LinearLayout>
+</LinearLayout>
