@@ -18,19 +18,16 @@ import com.xxp.miaoview.mvp.contract.MainContract
 class MainPresenter @Inject
 constructor(model: MainContract.Model, rootView: MainContract.View) : BasePresenter<MainContract.Model, MainContract.View>(model, rootView) {
     @Inject
-    internal var mErrorHandler: RxErrorHandler? = null
+    lateinit var mErrorHandler: RxErrorHandler
     @Inject
-    internal var mApplication: Application? = null
+    lateinit var mApplication: Application
     @Inject
-    internal var mImageLoader: ImageLoader? = null
+    lateinit var mImageLoader: ImageLoader
     @Inject
-    internal var mAppManager: AppManager? = null
+    lateinit var mAppManager: AppManager
 
     override fun onDestroy() {
         super.onDestroy()
-        this.mErrorHandler = null
-        this.mAppManager = null
-        this.mImageLoader = null
-        this.mApplication = null
+
     }
 }

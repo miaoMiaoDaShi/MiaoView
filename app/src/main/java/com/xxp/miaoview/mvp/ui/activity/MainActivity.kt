@@ -2,12 +2,12 @@ package com.xxp.miaoview.mvp.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
+import com.ashokvarma.bottomnavigation.BottomNavigationItem
 
 import com.jess.arms.base.BaseActivity
 import com.jess.arms.di.component.AppComponent
 import com.jess.arms.utils.ArmsUtils
 
-import com.xxp.miaoview.di.component.DaggerMainComponent
 import com.xxp.miaoview.di.module.MainModule
 import com.xxp.miaoview.mvp.contract.MainContract
 import com.xxp.miaoview.mvp.presenter.MainPresenter
@@ -16,6 +16,7 @@ import com.xxp.miaoview.R
 
 
 import com.jess.arms.utils.Preconditions.checkNotNull
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : BaseActivity<MainPresenter>(), MainContract.View {
@@ -34,6 +35,23 @@ class MainActivity : BaseActivity<MainPresenter>(), MainContract.View {
     }
 
     override fun initData(savedInstanceState: Bundle?) {
+        initBottomNavBar()
+    }
+
+    private fun initBottomNavBar() {
+        mBottomNavBar
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_home, "首页")
+                        .setActiveColor(R.color.public_color_CDD3D7)
+                        .setInActiveColor(R.color.public_colorPrimary))
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_video, "影视")
+                        .setActiveColor(R.color.public_color_CDD3D7)
+                        .setInActiveColor(R.color.public_colorPrimary))
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_image, "图库")
+                        .setActiveColor(R.color.public_color_CDD3D7)
+                        .setInActiveColor(R.color.public_colorPrimary))
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_mine, "我的")
+                        .setActiveColor(R.color.public_color_CDD3D7)
+                        .setInActiveColor(R.color.public_colorPrimary))
 
     }
 

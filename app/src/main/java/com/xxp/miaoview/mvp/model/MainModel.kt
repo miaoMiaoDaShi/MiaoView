@@ -17,13 +17,12 @@ import com.xxp.miaoview.mvp.contract.MainContract
 class MainModel @Inject
 constructor(repositoryManager: IRepositoryManager) : BaseModel(repositoryManager), MainContract.Model {
     @Inject
-    internal var mGson: Gson? = null
+    lateinit var mGson: Gson
     @Inject
-    internal var mApplication: Application? = null
+    lateinit var mApplication: Application
 
     override fun onDestroy() {
         super.onDestroy()
-        this.mGson = null
-        this.mApplication = null
+
     }
 }

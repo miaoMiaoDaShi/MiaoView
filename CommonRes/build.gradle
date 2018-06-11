@@ -30,4 +30,6 @@ dependencies {
             exclude module: 'support-annotations'
     }
     api rootProject.ext.dependencies["lottie"]
+    //底部导航
+    api rootProject.ext.dependencies["bottom-navigation-bar"]
 }

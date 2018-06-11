@@ -1,26 +1,25 @@
-if (!isAppModule.toBoolean()) {
-    apply plugin: 'com.android.application'
-} else {
-    apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
-}
 
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 kapt {
-    generateStubs = true
     arguments {
         arg("moduleName", project.getName())
     }
 }
 android {
     compileSdkVersion 27
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
     defaultConfig {
-        if (!isAppModule.toBoolean()) {
-            applicationId "com.xxp.miaoview"
-        }
+        applicationId "com.xxp.miaoview"
         minSdkVersion 22
         targetSdkVersion 27
         versionCode 1
@@ -28,7 +27,12 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
 
+
+
     }
+
+
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,8 +44,10 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.1.1'
     kapt rootProject.ext.dependencies["arouter-compiler"]
+    kapt rootProject.ext.dependencies["dagger2-compiler"]
     implementation project(":CommonRes")
     implementation project(":CommonService")
     testImplementation 'junit:junit:4.12'

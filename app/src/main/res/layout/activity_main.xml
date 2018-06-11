@@ -7,40 +7,18 @@
     android:background="@color/public_white"
     android:orientation="vertical">
 
-
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/mFlContent"
+        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="0px">
 
-        <Button
-            android:id="@+id/mBtnRecommend"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/public_background"
-            android:textColor="@color/public_color_959292"
-            android:textSize="@dimen/public_font_24sp"
-            tools:text="@string/public_name_recommend" />
+    </FrameLayout>
 
-        <Button
-            android:id="@+id/mBtnHold"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/public_background"
-            android:textColor="@color/public_color_959292"
-            android:textSize="@dimen/public_font_24sp"
-            tools:text="@string/public_name_new_hold" />
+    <com.ashokvarma.bottomnavigation.BottomNavigationBar
+        android:id="@+id/mBottomNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <Button
-            android:id="@+id/mBtnMine"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/public_background"
-            android:textColor="@color/public_color_959292"
-            android:textSize="@dimen/public_font_24sp"
-            tools:text="@string/public_name_mine" />
-    </LinearLayout>
+    </com.ashokvarma.bottomnavigation.BottomNavigationBar>
 </LinearLayout>

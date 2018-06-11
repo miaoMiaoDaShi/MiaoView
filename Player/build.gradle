@@ -1,4 +1,4 @@
-if (!isVideoPlayerModule.toBoolean()) {
+if (isBuildModule.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -8,7 +8,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 kapt {
-    generateStubs = true
     arguments {
         arg("moduleName", project.getName())
     }
@@ -36,7 +35,7 @@ android {
         debug {
             buildConfigField "boolean", "LOG_DEBUG", "true"
             buildConfigField "boolean", "USE_CANARY", "true"
-            buildConfigField "boolean", "IS_BUILD_MODULE", "${isVideoPlayerModule}"
+            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -44,7 +43,7 @@ android {
         release {
             buildConfigField "boolean", "LOG_DEBUG", "false"
             buildConfigField "boolean", "USE_CANARY", "false"
-            buildConfigField "boolean", "IS_BUILD_MODULE", "${isVideoPlayerModule}"
+            buildConfigField "boolean", "IS_BUILD_MODULE", "${isBuildModule}"
             minifyEnabled false
             shrinkResources false
             zipAlignEnabled true
@@ -52,7 +51,7 @@ android {
         }
     }
 
-//    resourcePrefix "ModuleName_" //给 Module 内的资源名增加前缀, 避免资源名冲突, 建议使用 Module 名作为前缀
+   resourcePrefix "player_" //给 Module 内的资源名增加前缀, 避免资源名冲突, 建议使用 Module 名作为前缀
 
     lintOptions {
         disable 'InvalidPackage'
@@ -63,7 +62,7 @@ android {
     sourceSets {
         main {
             jniLibs.srcDirs = ['libs']
-            if (!isVideoPlayerModule.toBoolean()) {
+            if (isBuildModule.toBoolean()) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
             } else {
                 manifest.srcFile 'src/main/release/AndroidManifest.xml'
@@ -77,7 +76,7 @@ dependencies {
     //因为 CommonRes 依赖了 CommonSDK, 所以如果业务模块需要公共 UI 组件就依赖 CommonRes, 如果不需要就只依赖 CommonSDK
     implementation project(":CommonRes")
     implementation project(":CommonService")
-    if (!isVideoPlayerModule.toBoolean()) {
+    if (isBuildModule.toBoolean()) {
         //view
 //        annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
 //            exclude module: 'support-annotations'
@@ -99,7 +98,6 @@ dependencies {
         compileOnly rootProject.ext.dependencies["junit"]
     }
     implementation rootProject.ext.dependencies["jiaozivideoplayer"]
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 }
 repositories {
