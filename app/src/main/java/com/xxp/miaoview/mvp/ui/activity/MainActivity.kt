@@ -1,7 +1,10 @@
 package com.xxp.miaoview.mvp.ui.activity
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.support.annotation.RequiresApi
+import com.ashokvarma.bottomnavigation.BottomNavigationBar
 import com.ashokvarma.bottomnavigation.BottomNavigationItem
 
 import com.jess.arms.base.BaseActivity
@@ -16,10 +19,12 @@ import com.xxp.miaoview.R
 
 
 import com.jess.arms.utils.Preconditions.checkNotNull
+import com.xxp.miaoview.di.component.DaggerMainComponent
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : BaseActivity<MainPresenter>(), MainContract.View {
+class MainActivity : BaseActivity<MainPresenter>(), MainContract.View, BottomNavigationBar.OnTabSelectedListener {
+
 
     override fun setupActivityComponent(appComponent: AppComponent) {
         DaggerMainComponent //如找不到该类,请编译一下项目
@@ -40,21 +45,30 @@ class MainActivity : BaseActivity<MainPresenter>(), MainContract.View {
 
     private fun initBottomNavBar() {
         mBottomNavBar
-                .addItem(BottomNavigationItem(R.drawable.ic_nav_home, "首页")
-                        .setActiveColor(R.color.public_color_CDD3D7)
-                        .setInActiveColor(R.color.public_colorPrimary))
-                .addItem(BottomNavigationItem(R.drawable.ic_nav_video, "影视")
-                        .setActiveColor(R.color.public_color_CDD3D7)
-                        .setInActiveColor(R.color.public_colorPrimary))
-                .addItem(BottomNavigationItem(R.drawable.ic_nav_image, "图库")
-                        .setActiveColor(R.color.public_color_CDD3D7)
-                        .setInActiveColor(R.color.public_colorPrimary))
-                .addItem(BottomNavigationItem(R.drawable.ic_nav_mine, "我的")
-                        .setActiveColor(R.color.public_color_CDD3D7)
-                        .setInActiveColor(R.color.public_colorPrimary))
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_home, "首页"))
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_video, "影视"))
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_image, "图库"))
+                .addItem(BottomNavigationItem(R.drawable.ic_nav_mine, "我的"))
+                .setFirstSelectedPosition(0)
+                .setInActiveColor(R.color.public_color_CDD3D7)
+                .setActiveColor(R.color.public_colorPrimary)
+                .setTabSelectedListener(this)
+                .initialise()
+
+
+    }
+    override fun onTabUnselected(position: Int) {
 
     }
 
+    override fun onTabSelected(position: Int) {
+
+    }
+
+    override fun onTabReselected(position: Int) {
+
+
+    }
     override fun showLoading() {
 
     }

@@ -13,9 +13,11 @@
             <option value="$PROJECT_DIR$/CommonSDK" />
             <option value="$PROJECT_DIR$/CommonService" />
             <option value="$PROJECT_DIR$/Download" />
+            <option value="$PROJECT_DIR$/Image" />
             <option value="$PROJECT_DIR$/Mine" />
             <option value="$PROJECT_DIR$/Player" />
             <option value="$PROJECT_DIR$/Recommend" />
+            <option value="$PROJECT_DIR$/Video" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

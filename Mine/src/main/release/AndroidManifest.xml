@@ -8,5 +8,8 @@
         <meta-data
             android:name="com.xxp.mine.app.GlobalConfiguration"
             android:value="ConfigModule" />
+
+        <activity android:name=".mvp.ui.activity.MainActivity"></activity>
     </application>
+
 </manifest>

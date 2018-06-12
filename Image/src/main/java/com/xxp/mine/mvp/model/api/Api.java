@@ -1,4 +1,4 @@
-package com.xxp.recommend.mvp.model.api;
+package com.xxp.mine.mvp.model.api;
 
 /**
  * ================================================

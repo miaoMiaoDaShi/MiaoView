@@ -37,6 +37,10 @@ public interface RouterHub {
     String APP = "/app";//宿主 App 组件
     String DOWNLOAD = "/download";//下载
     String PLAYER = "/player";//播放
+    String MINE = "/mine";//个人中心
+    String RECOMMEND = "/recommend";//推荐页面  也是home 页
+    String IMAGE = "image";//图片
+    String VIDEO = "/video";//视频
 
 
     /**
@@ -53,4 +57,8 @@ public interface RouterHub {
 
     //播放
     String PLAYER_ING = PLAYER + "/PlayingActivity";
+
+    //推荐
+    //入口fragment
+    String RECOMMEND_RECOMMEND_FRAGMENT = RECOMMEND + "/RecommendFragment";
 }

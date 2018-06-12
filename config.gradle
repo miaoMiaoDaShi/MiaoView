@@ -18,7 +18,8 @@ ext {
             rxlifecycleSdkVersion   : "1.0",
             rxlifecycle2SdkVersion  : "2.2.1",
             espressoSdkVersion      : "3.0.1",
-            canarySdkVersion        : "1.5.4"
+            canarySdkVersion        : "1.5.4",
+            navigationVersion       : "1.0.0-alpha02"
     ]
 
     dependencies = [
@@ -59,7 +60,8 @@ ext {
             "toast"                    : "com.github.GrenderG:Toasty:1.3.0",
             "lottie"                   : "com.airbnb.android:lottie:2.5.4",
             "brvah"                    : "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30",
-            "jiaozivideoplayer"                   : "cn.jzvd:jiaozivideoplayer:6.2.10",
+            "jiaozivideoplayer"        : "cn.jzvd:jiaozivideoplayer:6.2.10",
+            "banner"                   : "com.youth.banner:banner:1.4.10",
             //rx1
             "rxandroid"                : "io.reactivex:rxandroid:1.2.1",
             "rxjava"                   : "io.reactivex:rxjava:1.3.0",
@@ -100,6 +102,8 @@ ext {
             "lifecyclemodel"           : "me.jessyan:lifecyclemodel:1.0.1",
             "anko"                     : "org.jetbrains.anko:anko-commons:0.10.5",
             "matisse"                  : "com.zhihu.android:matisse:0.4.3",
+            "navigation-fragment"      : "android.arch.navigation:navigation-fragment:${version["navigationVersion"]}",
+            "navigation-ui"            : "android.arch.navigation:navigation-ui:${version["navigationVersion"]}",
             //test
             "junit"                    : "junit:junit:4.12",
             "androidJUnitRunner"       : "android.support.test.runner.AndroidJUnitRunner",

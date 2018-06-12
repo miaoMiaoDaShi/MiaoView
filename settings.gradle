@@ -1,1 +1,1 @@
-include ':app', ':CommonSdk', ':CommonRes',':Download', ':Player', ':CommonService', ':Mine', ':Recommend'
+include ':app', ':CommonSdk', ':CommonRes',':Download', ':Player', ':CommonService', ':Mine', ':Recommend',':Video',':Image'
